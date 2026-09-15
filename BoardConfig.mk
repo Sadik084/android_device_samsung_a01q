@@ -14,7 +14,7 @@
 
 DEVICE_PATH := device/samsung/a01q
 BUILD_TOP := $(shell pwd)
-
+TARGET_USES_VULKAN := false
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
