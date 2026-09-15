@@ -372,7 +372,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=adb \
 	debug.hwui.renderer=skiagl \
-	ro.hwui.use_vulkan=false \
 	ro.surface_flinger.supports_background_blur=0 \
 	ro.launcher.blur.appLaunch=0 \
 	ro.config.zram=true \
