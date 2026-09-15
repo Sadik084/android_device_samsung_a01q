@@ -41,6 +41,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
@@ -371,7 +372,20 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.service.adb.enable=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=adb
+	persist.sys.usb.config=adb \
+	debug.hwui.renderer=skiagl \
+	ro.hwui.use_vulkan=false \
+	ro.surface_flinger.supports_background_blur=0 \
+	ro.launcher.blur.appLaunch=0 \
+	ro.config.zram=true \
+	ro.lmk.use_minfree_levels=true \
+	ro.lmk.kill_heaviest_task=true \
+	ro.lmk.debug=false \
+	ro.lmk.swap_free_low_percentage=15 \
+	ro.lmk.thrashing_limit=30 \
+	persist.sys.purgeable_assets=1 \
+	profiler.force_disable_err_rpt=1 \
+	profiler.force_disable_ulog=1
 
 # Call the proprietary setup
 $(call inherit-product, vendor/samsung/a01q/a01q-vendor.mk)

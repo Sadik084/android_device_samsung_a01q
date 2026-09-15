@@ -31,6 +31,18 @@
 -->
 
 <Powerhint>
+    <Hint type="0x1200"> <!--interaction-->
+        <Resource opcode="0x40800000" value="0x4E0"/>   <!-- B CPU - min freq ~1.2 GHz -->
+        <Resource opcode="0x40800100" value="0x4E0"/>   <!-- L CPU - min freq ~1.2 GHz -->
+        <Resource opcode="0x41400000" value="0x4"  />   <!-- B CPU - above_hispeed_delay of 40 ms -->
+        <Resource opcode="0x41410000" value="0x5A" />   <!-- B CPU - go hispeed load 90 -->
+        <Resource opcode="0x41414000" value="0x4E0"/>   <!-- B CPU - hispeed freq of 1.2 GHz -->
+        <Resource opcode="0x41420000" value="0x5A" />   <!-- B CPU - target load of 90 -->
+        <Resource opcode="0x41400100" value="0x4"  />   <!-- L CPU - above_hispeed_delay of 40 ms -->
+        <Resource opcode="0x41410100" value="0x5A" />   <!-- L CPU - go hispeed load 90 -->
+        <Resource opcode="0x41414100" value="0x4E0"/>   <!-- L CPU - hispeed freq of 1.2 GHz -->
+        <Resource opcode="0x41420100" value="0x5A" />   <!-- L CPU - target load of 90 -->
+    </Hint>
     <Hint type="0x0E00"> <!--preview-->
         <Resource opcode="0x41400000" value="0x4"  />   <!-- B CPU - above_hispeed_delay of 40 ms -->
         <Resource opcode="0x41410000" value="0x5F" />   <!-- B CPU - go hispeed load 95 -->

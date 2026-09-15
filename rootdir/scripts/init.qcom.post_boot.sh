@@ -339,12 +339,12 @@ function 8937_sched_dcvs_hmp()
     echo 1 > /sys/devices/system/cpu/cpu0/online
     echo "interactive" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
     echo "19000 1094400:39000" > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
-    echo 85 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+    echo 90 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
     echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
     echo 1094400 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
     echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
     echo "1 960000:85 1094400:90 1344000:80" > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-    echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
+    echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
     echo 40000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/sampling_down_factor
 
     # enable governor for power cluster
