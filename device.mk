@@ -277,7 +277,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor:32 \
     android.hardware.radio.config@1.2.vendor:32 \
     android.hardware.radio.deprecated@1.0.vendor:32 \
-    android.hardware.secure_element@1.0.vendor:32 \
     libxml2 \
     libcutils_shim.vendor:32
 

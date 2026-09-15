@@ -387,8 +387,6 @@ on post-fs-data
     chmod 2770 /data/vendor/perfd
     rm /data/vendor/perfd/default_values
 
-    mkdir /data/vendor/secure_element 0777 system system
-
     #Create IOP  deamon related dirs
     mkdir /data/vendor/iop 0700 root system
 
@@ -436,12 +434,6 @@ on post-fs-data
 
     #Create dir for TUI
     mkdir /data/vendor/tui 0700 system drmrpc
-
-service nqnfcinfo /system/vendor/bin/nqnfcinfo
-    class late_start
-    group nfc
-    user system
-    oneshot
 
 service iop /system/vendor/bin/iop
     class main
@@ -844,11 +836,6 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
     user system
     group system
-
-service esepmdaemon /system/vendor/bin/esepmdaemon
-    class core
-    user system
-    group nfc
 
 on charger
     setprop persist.sys.usb.config mass_storage

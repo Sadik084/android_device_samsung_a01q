@@ -1205,13 +1205,6 @@ vendor/lib64/libscalar.so
 vendor/etc/dolby/dax-default.xml
 vendor/etc/media_codecs_dolby_audio.xml
 
-# ESE
-vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
-vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc
-vendor/lib/hw/vendor.qti.esepowermanager@1.1-impl.so
-vendor/lib/vendor.qti.esepowermanager@1.0.so
-vendor/lib/vendor.qti.esepowermanager@1.1.so
-
 # FM
 vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
