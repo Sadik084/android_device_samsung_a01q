@@ -1,6 +1,6 @@
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
-dalvik.vm.dex2oat-filter=speed
+dalvik.vm.dex2oat-filter=speed-profile
 
 # Fastbootd
 ro.fastbootd.available=true

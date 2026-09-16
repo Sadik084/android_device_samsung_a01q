@@ -192,7 +192,7 @@ PRODUCT_PACKAGES += \
     vulkan.pastel
 
 # FM
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
     qcom.fmradio

@@ -30,7 +30,6 @@
 # Bluetooth Fix
 import /vendor/etc/init/hw/init.hq.common.rc
 
-import init.carrier.rc
 import /vendor/etc/init/hw/init.samsung.rc
 
 on early-init
@@ -102,7 +101,7 @@ on early-boot
     mkdir /data/vendor/camera 0770 camera camera
 
 #start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
@@ -111,7 +110,7 @@ on init
    write /dev/stune/top-app/schedtune.colocate 1
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
-service qfp-daemon /system/vendor/bin/qfp-daemon
+service qfp-daemon /vendor/bin/qfp-daemon
    class late_start
    user system
    group system drmrpc
@@ -148,7 +147,7 @@ service vendor.qseecomd /vendor/bin/qseecomd
 #   user system
 #   group system net_raw
 
-service thermal-engine /system/vendor/bin/thermal-engine
+service thermal-engine /vendor/bin/thermal-engine
    class main
    user root
    socket thermal-send-client stream 0666 system system
@@ -157,14 +156,14 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-send-rule stream 0660 system system
    group root
 
-service audiod /system/vendor/bin/audiod
+service audiod /vendor/bin/audiod
    class late_start
    user system
    group system
 
 on boot
     start rmt_storage
-    insmod /system/lib/modules/adsprpc.ko
+    insmod /vendor/lib/modules/adsprpc.ko
 # access permission for secure touch
     chmod 0660 /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch_enable
     chmod 0440 /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch
@@ -218,7 +217,7 @@ service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
     user root
     oneshot
 
-service ppd /system/vendor/bin/mm-pp-dpps
+service ppd /vendor/bin/mm-pp-dpps
     class late_start
     disabled
     user system
@@ -243,7 +242,7 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
-service wcnss-service /system/vendor/bin/wcnss_service
+service wcnss-service /vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
@@ -258,19 +257,19 @@ on charger
     start vendor.hvdcp_opti
     start vendor.vm_bms
 
-service hbtp /system/vendor/bin/hbtp_daemon
+service hbtp /vendor/bin/hbtp_daemon
     class main
     user system
     group system
     disabled
 
-service dts_configurator /system/vendor/bin/dts_configurator
+service dts_configurator /vendor/bin/dts_configurator
     class late_start
     user system
     group media audio
     oneshot
 
-service dtseagleservice /system/vendor/bin/dts_eagle_service
+service dtseagleservice /vendor/bin/dts_eagle_service
     class late_start
     user system
     group audio media
@@ -284,12 +283,12 @@ service dtseagleservice /system/vendor/bin/dts_eagle_service
 on property:init.svc.dts_configurator=stopped
     start dtseagleservice
 
-service vendor.per_mgr /system/vendor/bin/pm-service
+service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
     group system net_raw
 
-service vendor.per_proxy /system/vendor/bin/pm-proxy
+service vendor.per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
@@ -311,7 +310,7 @@ service vendor.vm_bms  /vendor/bin/vm_bms
     user root
     group system wakelock
 
-service mdtpd /system/vendor/bin/mdtpd
+service mdtpd /vendor/bin/mdtpd
     class late_start
     user root
     group system radio drmrpc
