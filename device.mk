@@ -117,9 +117,9 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl.a01q:32 \
+    android.hardware.audio@7.1-impl.a01q:32 \
     android.hardware.audio.service:32 \
-    android.hardware.audio.effect@6.0-impl:32 \
+    android.hardware.audio.effect@7.0-impl:32 \
     android.hardware.soundtrigger@2.1-impl:32 \
     audio.r_submix.default:32 \
     audio.usb.default:32 \
@@ -288,9 +288,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     telephony-ext
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
@@ -371,18 +368,15 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=adb \
-	debug.hwui.renderer=skiagl \
 	ro.surface_flinger.supports_background_blur=0 \
 	ro.launcher.blur.appLaunch=0 \
 	ro.config.zram=true \
-	ro.lmk.use_minfree_levels=true \
-	ro.lmk.kill_heaviest_task=true \
-	ro.lmk.debug=false \
-	ro.lmk.swap_free_low_percentage=15 \
-	ro.lmk.thrashing_limit=30 \
 	persist.sys.purgeable_assets=1 \
 	profiler.force_disable_err_rpt=1 \
-	profiler.force_disable_ulog=1
+	profiler.force_disable_ulog=1 \
+	ro.lmk.medium=40 \
+	ro.lmk.low=70 \
+	ro.lmk.critical=100
 
 # Call the proprietary setup
 $(call inherit-product, vendor/samsung/a01q/a01q-vendor.mk)

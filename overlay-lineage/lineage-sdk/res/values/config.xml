@@ -34,9 +34,8 @@
          LIGHTS_ADJUSTABLE_NOTIFICATION_LED_BRIGHTNESS = 32
          LIGHTS_BATTERY_LED = 64
 
-         For example, a device with notification and battery lights that supports
-         pulsating and RGB control would set this config to 75. -->
-    <integer name="config_deviceLightCapabilities">107</integer>
+         The Galaxy A01 has no notification or battery LED. -->
+    <integer name="config_deviceLightCapabilities">0</integer>
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -52,9 +51,9 @@
          config to 7. -->
     <integer name="config_deviceHardwareWakeKeys">64</integer>
 
-    <!-- Whether device needs to wait for Qualcomm MPCTL service to start
-         before setting power profiles on boot. -->
-    <bool name="config_waitForMpctlOnBoot">true</bool>
+    <!-- This device uses the QTI perf HAL (vendor.qti.hardware.perf)
+         rather than the legacy mpctl service, so nothing to wait on. -->
+    <bool name="config_waitForMpctlOnBoot">false</bool>
 
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
 

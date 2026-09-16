@@ -1,5 +1,6 @@
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.dex2oat-filter=speed
 
 # Fastbootd
 ro.fastbootd.available=true
@@ -9,3 +10,13 @@ persist.backup.ntpServer=0.pool.ntp.org
 
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
+
+# Soc
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=SDM439
+
+# First API level
+ro.product.first_api_level=29
+
+# Device-identifier
+ro.wifi.channels=13

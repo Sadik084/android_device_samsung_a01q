@@ -14,13 +14,13 @@
 
 DEVICE_PATH := device/samsung/a01q
 BUILD_TOP := $(shell pwd)
-TARGET_USES_VULKAN := false
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT := cortex-a53
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-a
@@ -63,11 +63,11 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=ttyMSM0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 sched_boost_on_input=1 androidboot.usbconfigfs=true loop.max_part=7 printk.devkmsg=on androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_BOOT_HEADER_VERSION := 2
-BOARD_ZRAM_DISKSIZE := 1610612736
+BOARD_ZRAM_DISKSIZE := 1073741824
 BOARD_ZRAM_COMPRESSION_ALGORITHM := lz4
 
 BOARD_MKBOOTIMG_ARGS += \
@@ -226,14 +226,13 @@ BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Vndk
-BOARD_VNDK_VERSION := current
+BOARD_VNDK_VERSION := 34
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2022-03-01
+VENDOR_SECURITY_PATCH := 2022-07-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
